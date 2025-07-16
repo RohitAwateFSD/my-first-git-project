@@ -1,3 +1,45 @@
 hello git!
 <p> this is my second code </p> 
 <footer> This is the footer of my website </footer>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Leaflet Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">My First Leaflet Map 🌍</h2>
+<div id="map"></div>
+
+<script>
+  // Initialize the map
+  var map = L.map('map').setView([19.7515, 75.7139], 6); // Maharashtra center
+
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add a marker
+  var marker = L.marker([19.8762, 75.3433]).addTo(map);
+  marker.bindPopup("<b>Hello!</b><br>This is Aurangabad.").openPopup();
+</script>
+
+</body>
+</html>
